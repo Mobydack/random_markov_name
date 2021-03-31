@@ -1,4 +1,5 @@
 const fs = require('fs');
+const prettier = require('prettier');
 const Dictonary = require("./module");
 
 const makeModel = words => {
@@ -82,7 +83,7 @@ const writeModel = data => {
     text += `
         module.exports = model;
     `;
-    fs.writeFileSync('model.js', text);
+    fs.writeFileSync('model.js', prettier.format(text));
 };
 
 module.exports = writeModel;
