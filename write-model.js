@@ -83,7 +83,7 @@ const writeModel = data => {
     text += `
         module.exports = model;
     `;
-    fs.writeFileSync('model.js', prettier.format(text));
+    fs.writeFileSync('generated-model.js', prettier.format(text));
 };
 
 module.exports = writeModel;
